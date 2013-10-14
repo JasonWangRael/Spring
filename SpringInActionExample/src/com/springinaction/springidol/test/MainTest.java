@@ -1,5 +1,10 @@
 package com.springinaction.springidol.test;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.springinaction.springidol.IPerformer;
+
 public class MainTest {
 
 	/**
@@ -7,7 +12,10 @@ public class MainTest {
 	 * @description
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ApplicationContext context = new ClassPathXmlApplicationContext("springidol.xml");
+		
+		IPerformer hank =  (IPerformer) context.getBean("hank");
+		hank.perform();
 
 	}
 
